@@ -1,0 +1,164 @@
+\documentclass[aspectratio=169]{beamer}  % https://tex.stackexchange.com/a/14339/114006
+
+\usepackage{mypresentationstyle}
+% \graphicspath{ {./img/} }
+
+\title[Course Name (Course Code)]{Presentation Title}
+\subtitle{(Course Code)}
+% \titlegraphic{\includegraphics[width=1cm]{example-image}}
+
+\author{Student Name} 
+\institute[Exam Roll]{
+    Exam Roll\\ 
+    Reg. No\\ \medskip
+    % \scalebox{1}{\insertlogo} \\
+    Department Name \\ 
+    University Name \\ \medskip
+    Email: \textit{me@domain.edu} 
+}
+\date{August, 2021} 
+
+\logo{\includegraphics[height=0.5cm,keepaspectratio]{example-image}}
+
+\begin{document}
+
+{
+\setbeamercolor{page number in head/foot}{fg=date in head/foot.bg} % https://tex.stackexchange.com/a/412733/114006
+\begin{frame}[noframenumbering, plain]
+\titlepage
+\end{frame}
+% }
+% {
+% \setbeamercolor{page number in head/foot}{fg=date in head/foot.bg}
+% \section*{Outline}
+\begin{frame}[noframenumbering]
+\frametitle{Outline} 
+\tableofcontents %[pausesections,pausesubsections,subsectionstyle=shaded]
+\end{frame}
+}
+
+%------------------------------------------------
+
+\section{Section One} 
+\begin{frame}{Slide One}
+\begin{block}{Block One}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+\end{block}
+    \begin{columns} %\pause
+        \begin{column}{0.5\textwidth} 
+                    \begin{itemize}
+                        \justifying 
+                        \item Sed ut perspiciatis unde
+                        \item Sed ut perspiciatis unde
+                        \item Sed ut perspiciatis unde
+                        % \pause
+                    \end{itemize}
+        \end{column}
+        \begin{column}{0.5\textwidth}  
+                \begin{enumerate}
+                    \justifying 
+                    % \pause
+                    \item Sed ut perspiciatis unde
+                    \item Sed ut perspiciatis unde
+                    \item Sed ut perspiciatis unde
+                \end{enumerate}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+%------------------------------------------------
+
+\section{Section Two}
+\begin{frame}{Slide Two}
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+    % \pause 
+\begin{block}{Block Two}
+  Sed ut perspiciatis unde:
+    \begin{align*}
+        x! &= 1 \times 2 \times 3 \times \cdots \times (x-1) \times x \\
+        \implies \ln(x!) &= \ln(1) + \ln(2) + \cdots + \ln(x) = \displaystyle \sum_{z=1}^x \ln(z)
+    \end{align*}
+\end{block}
+\end{frame}
+
+%------------------------------------------------
+
+\section{Section Three}
+\begin{framefont}{\footnotesize}
+\begin{frame}{Slide Three}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            Sed ut perspiciatis unde Fig-\ref{fig:sample}:
+            $$ \ln(x!) \approx \displaystyle \int_1^x \ln(z) dz = x\ln(x) - x + 1$$
+            For $x>>1$:
+            \begin{block}{}
+                $$\ln(x!) \approx x\ln(x) - x$$ 
+            \end{block}
+        \end{column}
+        \begin{column}{0.4\textwidth}  
+            \begin{figure}
+                \centering
+                \includegraphics[width=0.6\textwidth]{example-image}
+                \caption{An example image}
+                \label{fig:sample}
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame}
+\end{framefont}
+
+%------------------------------------------------
+
+\begin{frame}{Slide Four}
+ Lorem ipsum dolor sit amet:
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+           \begin{framefont}{\footnotesize}
+               \begin{table}
+                   \centering
+                   \begin{tabular}{|c|c|c|c|c|} 
+                       \hline
+                       $x$ & $x!$ & $\ln(x!)$ & $x\ln(x) - x$ & Error \\ \hline
+                       1 & 1 & 0 & -1 & $\cdots$ \\ \hline
+                       10 & 3628800 & 15.1 & 13.0 & 13.8\% \\ \hline
+                       100 & $9\times 10^{157}$ & 363.74 & 360.52 & 0.89\% \\ \hline
+                       1000 & $4\times 10^{2567}$ & 5912.13 & 5907.76 & 0.74\% \\ \hline 
+                   \end{tabular} 
+                   \caption{A sample table.}
+                   \label{tab:table}
+               \end{table}
+            \end{framefont}
+        \end{column}
+        \begin{column}{0.4\textwidth}  
+            \begin{figure}
+                \centering
+                \includegraphics[width=0.9\textwidth]{example-image}
+                \caption{Another example image.}
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+%------------------------------------------------
+
+\bulletoff\section*{}
+\begin{frame}{References}
+\begin{itemize}
+    \item Lorem ipsum dolor sit amet. \href{<>}{Source}. 
+    \item Lorem ipsum dolor sit amet. \href{<>}{Source}. 
+    \item Lorem ipsum dolor sit amet. \href{<>}{Source}. 
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------
+
+\setbeamercolor{page number in head/foot}{fg=date in head/foot.bg}
+% \bulletoff\section*{}
+\begin{frame}[noframenumbering]
+\Huge{\centerline{Thank You.}} %\pause
+\huge{\centerline{Any Question?}}
+\end{frame}
+
+%------------------------------------------------
+
+\end{document}

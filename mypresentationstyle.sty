@@ -1,0 +1,121 @@
+\mode<presentation>{
+
+% \usetheme{default}
+% \usetheme{AnnArbor}
+% \usetheme{Antibes}
+% \usetheme{Bergen}
+% \usetheme{Berkeley}
+% \usetheme{Berlin}
+% \usetheme{Boadilla}
+% \usetheme{boxes}
+% \usetheme{CambridgeUS}
+% \usetheme{Copenhagen}
+% \usetheme{Darmstadt}
+% \usetheme{Dresden}
+% \usetheme{Frankfurt}
+% \usetheme{Goettingen}
+% \usetheme{Hannover}
+% \usetheme{Ilmenau}
+% \usetheme{JuanLesPins}
+% \usetheme{Luebeck}
+\usetheme{Madrid}
+% \usetheme{Malmoe}
+% \usetheme{Marburg}
+% \usetheme{Montpellier}
+% \usetheme{PaloAlto}
+% \usetheme{Pittsburgh}
+% \usetheme{Rochester}
+% \usetheme{Singapore}
+% \usetheme{Szeged}
+% \usetheme{Warsaw}
+% \usetheme{metropolis}
+\useinnertheme{circles} % https://tex.stackexchange.com/a/47373/114006
+% \useoutertheme[subsection=false]{smoothbars}  % https://tex.stackexchange.com/q/287855/114006
+
+% As well as themes, the Beamer class has a number of color themes for any slide theme. Uncomment each of these in turn to see how it changes the colors of your current slide theme.
+% \usecolortheme{default}
+%\usecolortheme{albatross}
+%\usecolortheme{beaver}
+%\usecolortheme{beetle}
+% \usecolortheme{crane}
+%\usecolortheme{dolphin}
+%\usecolortheme{dove}
+%\usecolortheme{fly}
+%\usecolortheme{lily}
+% \usecolortheme{orchid}
+% \usecolortheme{rose}
+% \usecolortheme{seagull}
+% \usecolortheme{seahorse}
+% \usecolortheme{sidebartab}
+% \usecolortheme{structure}
+\usecolortheme{whale}
+%\usecolortheme{wolverine}
+
+%  Uncomment each of these in turn to see how it changes change the font of your current theme.
+
+% \usefonttheme{default}
+% \usefonttheme{professionalfonts} 
+\usefonttheme{serif}
+% \usefonttheme{structurebold}
+% \usefonttheme{structureitalicserif}
+\usefonttheme{structuresmallcapsserif}
+
+% \usepackage{fontspec}
+% \setmainfont{Liberation Serif}
+
+%\setbeamertemplate{footline} % To remove the footer line in all slides, uncomment this line
+% \setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count, uncomment this line
+
+% \setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides, uncomment this line
+}
+
+% https://tex.stackexchange.com/a/437578/114006
+\makeatletter
+% Remember the way beamer did it before
+\let\beamer@old@writeslidentry\beamer@writeslidentry
+% Tell it to do nothing with the slides entry
+\newcommand\bulletoff{\let\beamer@writeslidentry\relax}
+% Reset it to the old ways
+\newcommand\bulleton{\let\beamer@writeslidentry\beamer@old@writeslidentry}
+\makeatother
+
+% \setbeamertemplate{mini frames}{}  % https://tex.stackexchange.com/a/45594/114006
+
+\setbeamercolor{section in head/foot}{fg=white,bg=black}           % https://tex.stackexchange.com/a/326553/114006
+\makeatletter
+\setbeamertemplate{headline}{%
+    \begin{beamercolorbox}[ht=2.25ex,dp=3.75ex]{section in head/foot}
+        \insertnavigation{\paperwidth}
+    \end{beamercolorbox}%
+}%
+\makeatother
+
+\usepackage{ragged2e}   
+\addtobeamertemplate{block begin}{}{\justifying}  % https://tex.stackexchange.com/a/148696/114006
+\apptocmd{\frame}{}{\justifying}{} % https://tex.stackexchange.com/a/55590/114006
+
+
+% https://tex.stackexchange.com/a/401409/114006
+\usepackage{environ}
+
+% Custom font for a frame.
+
+\newcommand{\customframefont}[1]{
+\setbeamertemplate{itemize/enumerate body begin}{#1}
+\setbeamertemplate{itemize/enumerate subbody begin}{#1}
+}
+
+\NewEnviron{framefont}[1]{
+\customframefont{#1} % for itemize/enumerate
+{#1 % For the text outside itemize/enumerate
+\BODY
+}
+\customframefont{\normalsize}
+}
+
+%  https://tex.stackexchange.com/a/127155/114006
+% \usepackage{lmodern} % get rid of warnings
+% \usepackage{caption} % improved spacing between figure and caption
+\setbeamertemplate{caption}[numbered]
+
+\usepackage[version=4]{mhchem}
