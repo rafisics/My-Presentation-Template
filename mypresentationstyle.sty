@@ -73,8 +73,13 @@
 \makeatletter
 % Remember the way beamer did it before
 \let\beamer@old@writeslidentry\beamer@writeslidentry
+\def\beamer@new@writeslidentry{%
+  \expandafter\ifblank\expandafter{\beamer@framestartpage}{}% does not happen normally
+  {\clearpage\beamer@notesactions}%
+}  % https://tex.stackexchange.com/a/610903/114006
+
 % Tell it to do nothing with the slides entry
-\newcommand\bulletoff{\let\beamer@writeslidentry\relax}
+\newcommand\bulletoff{\let\beamer@writeslidentry\beamer@new@writeslidentry} 
 % Reset it to the old ways
 \newcommand\bulleton{\let\beamer@writeslidentry\beamer@old@writeslidentry}
 \makeatother
