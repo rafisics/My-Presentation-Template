@@ -54,7 +54,7 @@
 %  Uncomment each of these in turn to see how it changes change the font of your current theme.
 
 % \usefonttheme{default}
-% \usefonttheme{professionalfonts} 
+% \usefonttheme{professionalfonts}
 \usefonttheme{serif}
 % \usefonttheme{structurebold}
 % \usefonttheme{structureitalicserif}
@@ -79,7 +79,7 @@
 }  % https://tex.stackexchange.com/a/610903/114006
 
 % Tell it to do nothing with the slides entry
-\newcommand\bulletoff{\let\beamer@writeslidentry\beamer@new@writeslidentry} 
+\newcommand\bulletoff{\let\beamer@writeslidentry\beamer@new@writeslidentry}
 % Reset it to the old ways
 \newcommand\bulleton{\let\beamer@writeslidentry\beamer@old@writeslidentry}
 \makeatother
@@ -95,7 +95,7 @@
 }%
 \makeatother
 
-\usepackage{ragged2e}   
+\usepackage{ragged2e}
 \addtobeamertemplate{block begin}{}{\justifying}  % https://tex.stackexchange.com/a/148696/114006
 \apptocmd{\frame}{}{\justifying}{} % https://tex.stackexchange.com/a/55590/114006
 
@@ -124,5 +124,10 @@
 \setbeamertemplate{caption}[numbered]
 
 \usepackage[version=4]{mhchem}
+\usepackage{docmute}   % https://tex.stackexchange.com/a/136727/114006
 
 \setbeamersize{text margin left=30pt,text margin right=30pt}
+
+
+% allowframebreaks numbering in the title
+\setbeamertemplate{frametitle continuation}{\scriptsize (\insertcontinuationcountroman)}
