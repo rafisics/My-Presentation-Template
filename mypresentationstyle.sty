@@ -123,6 +123,7 @@
 % \usepackage{caption} % improved spacing between figure and caption
 \setbeamertemplate{caption}[numbered]
 
+\usepackage{amsmath, amsthm, amssymb}
 \usepackage[version=4]{mhchem}
 \usepackage{docmute}   % https://tex.stackexchange.com/a/136727/114006
 
@@ -130,4 +131,12 @@
 
 
 % allowframebreaks numbering in the title
-\setbeamertemplate{frametitle continuation}{\scriptsize (\insertcontinuationcountroman)}
+% \setbeamertemplate{frametitle continuation}{\scriptsize (\insertcontinuationcountroman)}
+\setbeamertemplate{frametitle continuation}{}
+
+% https://www.latex-tables.com/
+\usepackage{multirow}
+\usepackage{colortbl}
+\usepackage{color}
+\usepackage{diagbox}
+% \usepackage{hhline} % Issue with beamer
